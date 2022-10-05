@@ -1,0 +1,21 @@
+// COMPONENTS VIDEO DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: Responsive Video Embed
+
+//Responsive Video Embed for iFrame videos (YouTube, Vimeo, etc)
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+  .video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }

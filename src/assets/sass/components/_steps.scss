@@ -1,0 +1,156 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// STEPS STYLES ---------------------------------------------------
+
+.step {
+	list-style: none;
+	margin: 0 0 2rem 0;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	counter-reset: step;
+	.step-item {
+		-ms-flex: 1 1 0;
+		flex: 1 1 0;
+		margin-top: 0;
+		min-height: 1rem;
+		position: relative;
+		text-align: center;
+		&:not(:first-child) {
+			&::before {
+				background: #44a793;
+				content: "";
+				height: 10px;
+				left: -50%;
+				position: absolute;
+				top: 22px;
+				width: 100%;
+			}
+		}
+		a {
+			color: #cbcbcb;
+			font-weight: bold;
+			display: inline-block;
+			padding: 55px 10px 0;
+			text-decoration: none;
+			&::before {
+				background: #44a793;
+				border-radius: 50%;
+				content: "";
+				display: block;
+				height: 3rem;
+				line-height: 2.7rem;
+				left: 50%;
+				position: absolute;
+				top: .2rem;
+				transform: translateX(-50%);
+				width: 3rem;
+				z-index: 1;
+				font-weight: 600;
+				content: counter(step);
+				counter-increment: step;
+				color: #FFF;
+				font-size: 1.5rem;
+				text-align: center;
+			}
+		}
+		a.current {
+			color: #000;
+		}
+	}
+	.step-item.active {
+		a {
+			color: #000;
+			&::before {
+				background: #44a793;
+			}
+		}
+		~ {
+			.step-item {
+				&::before {
+					background: #CCC;
+				}
+				a {
+					&::before {
+						background: #CCC;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.step {
+	list-style: none;
+	margin:0 0 2rem 0;
+	padding:0;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	counter-reset: step;
+}
+.step .step-item {
+	-ms-flex: 1 1 0;
+	flex: 1 1 0;
+	margin-top: 0;
+	min-height: 1rem;
+	position: relative; 
+	text-align: center;
+}
+.step .step-item:not(:first-child)::before {
+	background:#44a793;
+	content: "";
+	height:10px;
+	left: -50%;
+	position: absolute;
+	top:22px;
+	width: 100%;
+}
+.step .step-item a {
+	color: #cbcbcb;
+	font-weight:bold;
+	display: inline-block;
+	padding:55px 10px 0;
+	text-decoration: none;
+}
+.step .step-item a::before {
+	background: #44a793;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	height:3rem;
+	line-height:2.7rem;
+	left: 50%;
+	position: absolute;
+	top: .2rem;
+	transform: translateX(-50%);
+	width:3rem;
+	z-index: 1;
+	font-weight:600;
+	content: counter(step);
+	counter-increment: step;
+	color:#FFF;
+	font-size:1.5rem;
+	text-align: center;
+}
+.step .step-item.active a, .step .step-item a.current {color:#000;}
+.step .step-item.active a::before {background:#44a793;}
+.step .step-item.active ~ .step-item::before   {background:#CCC;}
+.step .step-item.active ~ .step-item a::before {background:#CCC;}
+
+
+// END: .step

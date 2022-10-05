@@ -1,0 +1,30 @@
+// COMPONENTS ALERT MESSAGES DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: System Alert Messages, Info Alert, Warning Alert, Error Message, Success
+
+// SYSTEM ALERT MESSAGES  ---------------------------------------------------
+.alertmsg {
+     
+     // INFO ALERT  ---------------------------------------------------
+     .info {
+        @include border($color: $info);
+     }    // END: .alertmsg .info
+
+     // WARNING ALERT  ---------------------------------------------------
+     .warning {
+        @include border($color: $warning);
+     } // END: .alertmsg .warning
+
+     // ERROR MESSAGE  ---------------------------------------------------
+     .error {
+        @include border($color: $danger);
+     } // END: .alertmsg .error
+
+     // SUCCESS  ---------------------------------------------------
+     .success {
+        @include border($color: $success);
+     } // END: .alertmsg .success
+} // END: .alertmsg

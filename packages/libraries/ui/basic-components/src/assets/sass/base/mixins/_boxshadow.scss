@@ -1,0 +1,19 @@
+// MIXIN BOXSHADOW DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: notice all variables are lowercase, no camelcase
+// SECTIONS: box shadow
+
+@mixin boxshadow($top, $left, $blur, $color:$boxshadow, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      -ms-border-box-shadow: inset $top $left $blur $color;
+      -o-border-box-shadow: inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      -ms-border-box-shadow: $top $left $blur $color;
+      -o-border-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+} // END: mixin boxshadow

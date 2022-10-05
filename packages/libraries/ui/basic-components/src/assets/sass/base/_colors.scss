@@ -1,0 +1,142 @@
+// COLORS -- DV LAST EDITED 2020 FEB ******************************************************************
+// FILE NOTES: 
+        // notice all variables are lowercase, no camelcase
+        // Color palette (color) should never be used outside of this file
+        // set all integration variables below
+// SECTIONS: COLOR PALETTE, COLOR INTEGRATION
+
+// COLOR PALETTE --- ALL/ONLY COLORS USED IN THE ENTIRE APP ARE HERE:
+// DO NOT USE THE COLOR PALETTE IN CODE. CREATE A COLOR INTEGRATION VARIABLE AND USE THAT.
+//$transaprent: transparent; 
+
+$lightblack: #222;
+$black: #000;
+
+$lightergray: #f8f9fc;
+$lightgray: #dadada;
+$gray: #ccc;
+$darkgray: #2d303f;
+
+$white: #fff;
+
+$red: #f53d3d;
+
+$yellow: #ffaf22;
+
+$orange: #fcb040;
+$darkorange: #b58672;
+
+$lightgreen: #32db64;
+$green: #28a14c;
+$darkgreen: #6d6d6d;
+
+$lightblue: #0082c4;
+$blueinfo: #3a87ad;
+$blue: #0061ff;
+$darkblue: #2d303f; 
+
+$purple: #554156;
+$darkpurple: #6200ee;
+
+
+// *************************************************************************************************************************************
+// COLOR INTEGRATION 
+
+// Named colors makes it easy to reuse colors on various components.
+
+//   //$primary:    $blue, 
+
+
+
+
+// BRAND -----------------
+$brandcolor: $orange;
+
+// BACKGROUND COLORS -----------------
+$primarybg: $white;
+$secondarybg: $lightergray;
+$bodybg: $secondarybg;
+$navbg: $primarybg;
+$headerbg: $primarybg;
+//$bgtransparent: $transparent;
+
+// INFO -----------------
+$info: $blueinfo;
+
+// DANGER -----------------
+$danger: $red;
+
+// WARNING -----------------
+$warning: $orange;
+ 
+// SUCCESS -----------------
+$success: $green;
+
+// DISABLED -----------------
+$disabledfont: $black;
+$disabledbg: $gray;
+
+// TYPOGRAPHY -----------------
+$primaryfont: $darkgray; 
+$secondaryfont: $white;
+$linkfont: $blue;
+$placeholderfont: $darkgray;
+$labelfont: $darkgray;
+
+// BORDER -----------------
+$primaryborder: $gray;
+$listborder: lighten( $gray, 15% );
+$secondaryborder: $white;
+
+// BOX-SHADOW -----------------
+$boxshadow: $lightgray;
+
+// HOVER/FOCUS/ACTIVE -----------------
+$activatedbg: lighten( $orange, 30% );
+$focus: lighten( $orange, 20% );
+$formfocusbg: lighten($lightblue, 70%);
+ 
+// ICONS --------------------------
+// tooltip
+$tooltip: $darkgray;
+$star: $yellow;
+$arrow: $gray;
+
+// FORM ------------------------------------------------------
+$formborder: $lightgray;
+
+// BUTTONS --------------------
+// Button: Primary
+$primarybuttonfont: $white;
+$primarybuttonbg: $blue;
+$primarybuttonhover: darken($primarybuttonbg, 10%);
+
+// Button: Secondary
+$secondarybuttonfont: $darkgray;
+$secondarybuttonbg: $white;
+$secondarybuttonhover: darken($secondarybuttonbg, 10%); 
+
+// Buttons: Tertiary
+$ctabuttonfont: $white;
+$ctabuttonbg: $orange;
+$ctabtnhover: darken($ctabuttonbg, 10%);
+ 
+$cancelbtnbg: $white;
+$cancelbtnfont: $black;
+
+$closebtn: $darkgray;
+
+// Buttons: Action Button
+$actionbtnbg: $darkpurple;
+$actionbuttonbg: $actionbtnbg;
+
+// INPUT ---------------------
+$required: $red;
+
+// SEARCH --------------------
+$searchcolor: $white;
+
+// MODAL --------------------------
+$modalheaderbg: $lightergray;
+$modalbg: $white;
+

@@ -1,0 +1,97 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// ORDER SUMMARY STYLES ---------------------------------------------------
+
+.order-box {max-width:500px;}
+.order_line {
+	display: flex;
+	margin: 5px 0;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	.label {
+		font-family: 'Helvetica Neue';
+		font-weight: 600;
+		font-size: 16px;
+		color: #000;
+		img {
+			width: 12px;
+			margin-left: 5px;
+		}
+	}
+	+ {
+		.collapse {
+			background-color: #f8f9fb;
+			padding: 7px;
+			border-radius: 5px;
+			font-family: 'Helvetica Neue';
+		}
+	}
+	.span {
+		font-family: 'Helvetica Neue';
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 15px;
+		color: #000;
+		text-align: right;
+		small {
+			display: block;
+			color: #3e3e3e;
+		}
+	}
+}
+.green_text {color:#00955F !important;}
+
+
+
+.order_line {
+	display:flex; margin:5px 0;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+.order_line .label {
+	font-family:'Helvetica Neue';
+	font-weight:600;
+	font-size:16px;
+	color:#000;
+}
+.order_line .label img {
+	width:12px; margin-left:5px;
+}
+.order_line + .collapse {
+	background-color:#f8f9fb;
+	padding:7px;
+	border-radius:5px;
+	font-family:'Helvetica Neue';
+}
+.order_line .span {
+	font-family:'Helvetica Neue';
+	font-weight:bold;
+	font-size:15px;
+	line-height: 15px;
+	color:#000;
+	text-align: right;
+}
+.order_line .span small {
+	display: block;
+	color:#3e3e3e;
+}
+ // END: order summary

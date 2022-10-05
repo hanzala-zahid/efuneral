@@ -1,0 +1,183 @@
+// COMPONENTS DATE/TIME PICKERS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: DATEPICKER
+
+// Add Beneficiary
+
+.box {
+	max-width: 620px;
+	padding: 20px;
+	margin: auto;
+	h1 {
+		font-family: 'Helvetica Neue';
+		font-weight: bold;
+		color: #000;
+		font-size: 28px;
+		margin-bottom: 5px;
+	}
+	p {
+		font-family: 'Helvetica Neue';
+		font-weight: 400;
+		color: #888;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+}
+.card {
+	padding: 15px;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	.title {
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		h2 {
+			color: #000;
+			font-family: 'Helvetica Neue';
+			font-weight: 500;
+			color: #000;
+			font-size: 24px;
+			margin: 0;
+		}
+		a {
+			color: #000;
+		}
+	}
+}
+.table-beneficiary {
+	width: 100%;
+	max-width: 100%;
+	border: none;
+	border-collapse: collapse;
+	th {
+		vertical-align: middle;
+		font-family: 'Helvetica Neue';
+		font-weight: 600;
+		font-size: 16px;
+		padding: .75rem 0;
+		color: #000;
+		text-align: left;
+		white-space: nowrap;
+	}
+	td {
+		padding: .75rem 0;
+		vertical-align: middle;
+		border-bottom: 1px solid #dee2e6;
+		font-family: 'Helvetica Neue';
+		font-weight: 400;
+		font-size: 14px;
+		color: #000;
+		.circle {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			text-align: center;
+			color: #fff;
+			line-height: 24px;
+			background-color: #004990;
+			font-size: 12px;
+			border-radius: 50%;
+		}
+		.circle.yellow {
+			background-color: #D3A02A;
+		}
+	}
+	tr {
+		&:last-child {
+			td {
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+.box {max-width:620px; padding:20px; margin:auto;}
+.box h1 {
+	font-family:'Helvetica Neue';
+	font-weight:bold;
+	color:#000;
+	font-size:28px;
+	margin-bottom:5px;
+}
+.box p {
+	font-family:'Helvetica Neue';
+	font-weight:400;
+	color:#888;
+	font-size:16px;
+	margin-bottom:20px;
+}
+.card {
+	padding:15px;
+	border:1px solid #CCC;
+	border-radius:4px;
+}
+.card .title {
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin-bottom:20px;
+}
+.card .title h2, .card .title a {
+	color:#000;
+}
+.card .title h2 {
+	font-family:'Helvetica Neue';
+	font-weight:500;
+	color:#000;
+	font-size:24px;
+	margin:0;
+}
+.table-beneficiary {
+	width: 100%;
+	max-width: 100%;
+	border:none;
+	border-collapse: collapse;
+}
+.table-beneficiary th {
+	vertical-align:middle;
+	font-family:'Helvetica Neue';
+	font-weight:600;
+	font-size:16px;
+	padding:.75rem 0;
+	color:#000;
+	text-align:left;
+	white-space:nowrap;
+}
+.table-beneficiary td {
+	padding:.75rem 0;
+	vertical-align:middle;
+	border-bottom:1px solid #dee2e6;
+	font-family:'Helvetica Neue';
+	font-weight:400;
+	font-size:14px;
+	color:#000;
+}
+.table-beneficiary td .circle {
+	display: inline-block;
+	width:24px;
+	height:24px;
+	text-align: center;
+	color:#fff;
+	line-height:24px;
+	background-color:#004990;
+	font-size:12px;
+	border-radius:50%;
+}
+.table-beneficiary td .circle.yellow {
+	background-color:#D3A02A;
+}
+.table-beneficiary tr:last-child td {
+	border-bottom: none;
+} // END: Add Beneficiary

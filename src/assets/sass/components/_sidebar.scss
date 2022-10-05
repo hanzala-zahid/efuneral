@@ -1,0 +1,116 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// HEADER STYLES ---------------------------------------------------
+
+.side-navbar {
+	width:250px;
+	background:#FFF; position:fixed;
+	left:0; top:62px; bottom:0; z-index:15;
+	margin:0; padding:0;
+	-webkit-transition:all 0.3s;
+	transition:all 0.3s;
+	box-shadow:0 0 15px rgba(0,0,0,0.04);
+	clip-path: inset(0px -15px 0px 0px);
+}
+.side-navbar .navigarion {
+	padding:20px;
+	max-height:100%;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.side-navbar .navigarion ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.side-navbar .navigarion ul li {
+	display: block;
+}
+.side-navbar .navigarion ul li a {
+	color:#000; width:100%;
+	font-family:'Helvetica Neue';
+	font-weight:400; z-index:10;
+	font-size:16px; top:0; right:0;
+	display:flex; text-decoration:none;			
+	align-items:center; padding:7.5px 0;
+}
+.side-navbar .navigarion ul li a img {
+	width:25px; text-align:center; margin-right:0.5rem;
+}
+.side-navbar .navigarion ul li a img.edit {
+	width:20px; margin-right:10px; margin-left:3px;
+}
+.side-navbar .navigarion ul li a img.contacts {
+	width:18px; margin-right:13px; margin-left:3px;
+}
+
+.side-navbar {
+	width: 250px;
+	background: #FFF;
+	position: fixed;
+	left: 0;
+	top: 62px;
+	bottom: 0;
+	z-index: 15;
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	box-shadow: 0 0 15px rgba(0,0,0,0.04);
+	clip-path: inset(0px -15px 0px 0px);
+	.navigarion {
+		padding: 20px;
+		max-height: 100%;
+		overflow: hidden;
+		overflow-y: auto;
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			li {
+				display: block;
+				a {
+					color: #000;
+					width: 100%;
+					font-family: 'Helvetica Neue';
+					font-weight: 400;
+					z-index: 10;
+					font-size: 16px;
+					top: 0;
+					right: 0;
+					display: flex;
+					text-decoration: none;
+					align-items: center;
+					padding: 7.5px 0;
+					img {
+						width: 25px;
+						text-align: center;
+						margin-right: 0.5rem;
+					}
+					img.edit {
+						width: 20px;
+						margin-right: 10px;
+						margin-left: 3px;
+					}
+					img.contacts {
+						width: 18px;
+						margin-right: 13px;
+						margin-left: 3px;
+					}
+				}
+			}
+		}
+	}
+}
+// END: side-navbar

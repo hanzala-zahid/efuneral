@@ -1,0 +1,14 @@
+// COMPONENTS PAGINATION DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: 
+
+.pagination-controls {
+    text-align: center !important;
+} // END: pagination-controls
+.pagination .current {
+    color: $secondaryfont !important;
+    @include radius(20px);
+}

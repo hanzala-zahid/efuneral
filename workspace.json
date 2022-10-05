@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "projects": {
+    "basic-components": "packages/libraries/ui/basic-components",
+    "deployment-infrastructure": "packages/deployment-infrastructure",
+    "efuneral-models": "packages/libraries/efuneral-models",
+    "forms": "packages/libraries/ui/forms",
+    "contract-signing-app": "packages/frontends/contract-signing-app",
+    "single-page-checkout": "packages/frontends/single-page-checkout",
+    "storybook-collection": "packages/libraries/ui/storybook-collection"
+  }
+}

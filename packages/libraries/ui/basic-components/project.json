@@ -1,0 +1,45 @@
+{
+  "root": "packages/libraries/ui/basic-components",
+  "sourceRoot": "packages/libraries/ui/basic-components/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/libraries/ui//basic-components",
+        "tsConfig": "packages/libraries/ui/basic-components/tsconfig.lib.json",
+        "project": "packages/libraries/ui/basic-components/package.json",
+        "entryFile": "packages/libraries/ui/basic-components/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/libraries/ui/basic-components/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/libraries/ui/basic-components/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/libraries/ui/basic-components"],
+      "options": {
+        "jestConfig": "packages/libraries/ui/basic-components/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

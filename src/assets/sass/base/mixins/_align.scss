@@ -1,0 +1,7 @@
+@mixin align($align: left) {
+    -webkit-box-align: $align;
+    -webkit-align-items: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+    text-align: $align;
+}   

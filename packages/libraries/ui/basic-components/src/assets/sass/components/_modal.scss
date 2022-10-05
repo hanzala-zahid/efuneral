@@ -1,0 +1,136 @@
+// COMPONENTS MODAL DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // AKA:alert
+// SECTIONS: filter, check list items, check list, classification filter, company, custom report, fingerprint location, hardware, incident list, incident, individual filter, location filter, new updates, note, password, site, site wifi, support, third party device deploy, third part device provision, transfer ownership, upgrade base station, user, worker roles
+
+
+.modal-wrapper {
+  border-radius: 8px !important;
+  @media screen and (min-width: 750px) {
+      width: 640px !important;
+  }
+  .toolbar {
+      padding: 16px 20px;
+  }
+  .scroll-content {
+      background-color: $primarybg;
+      form {
+          padding: 32px 18px 0 18px;
+          .item {
+              margin-bottom: 24px;
+          }
+      }
+  }
+}
+
+// GLOBAL STYLES
+[class*="modal"] { 
+  padding: 10px !important; 
+
+  .toolbar {
+    padding: 10px !important; 
+  } // END: modals .toolbar
+ header,
+ footer {
+
+    [class*="toolbar"] .back-button { // TODO
+      display: none;
+      visibility: hidden;
+    } // END: modalsheader toolbar .back-button, modalsfooter toolbar .back-button 
+  } // END: modalsheader, modalsfooter
+ header, 
+  .header,
+  .toolbar-background-md,
+  .title,
+  .toolbar-title  {
+    background: $modalheaderbg;
+    @include align($align:left);  
+    padding: 0px;
+  }
+ header {
+   buttons {
+      padding: 0 0 15px 0;
+    } // END: modalsheaderbuttons
+   title {
+      padding: 0 20px !important;
+    } // END: modalsheadertitle
+  } // END: modalsheader
+ content {
+    form {
+      padding-top: 10px !important;
+    } // END: MODALScontent form
+  } // END: MODALScontent (main content area)
+ footer {
+    padding: 0 20px;
+
+   buttons,buttons button {
+      display: block;
+      width: 100%;
+    } // END: modalsfooterbuttons,  // END: modalsfooterbuttons button
+    button.cancel:hover {
+      background: transparent !important;
+    } // END: modalsfooter button.cancel:hover
+  } // END: modalsfooter
+} // END: MODALS 
+
+.alert {
+  .alert-wrapper {
+    opacity: 1; 
+    transform: scale(1);
+  }
+  .alert-head .alert-title {
+    @extend .modal-header; 
+  }
+} // END:alert
+
+//filter-modal
+// TODO ADD DESCRIPTION OF WHAT THIS COMPONENT DOES
+.filtermodal {
+    background-color:$red;
+    align-items: center!important;
+    justify-content: center!important;
+    min-width: 0%!important;
+    text-align: center; 
+  } // END: filter-modal 
+
+  // check-list-items-modal
+  // TODO ADD DESCRIPTION OF WHAT THIS COMPONENT DOES
+
+  //check-list-modal
+  // TODO ADD DESCRIPTION OF WHAT THIS COMPONENT DOES
+  .check-list-modal{
+   title{
+      justify-content: center;;
+    }
+  
+      /* Small devices such as phone */
+      @media (max-width: 736px) {
+       content {
+          justify-content: center!important;
+          text-align: center;
+        }
+       input{
+          width: 60%;
+          text-align: center!important;
+          justify-content:center!important;
+          font-size: 1em;
+        }
+       item{
+          text-align: center!important;
+          justify-content: center!important;
+        }
+       label{
+          font-size: 3em;
+          justify-content: center!important;
+          text-align: center!important;
+        }
+       select{
+          @include border($color: $black, $size: 2px);
+          width: 20%;
+          margin-left: 40% ;
+        }
+      }
+  }

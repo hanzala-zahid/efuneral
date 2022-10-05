@@ -1,0 +1,73 @@
+// COMPONENTS FORM INPUT DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: inputs
+
+// Inputs
+.fieldset {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 650px;
+	position: relative;
+	. border: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1rem;
+}
+.input-field {
+	font-family: 'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	align-items: center;
+	padding: 10px;
+	color: #262626;
+	width: 100%;
+	max-width: 525px;
+	height: 45px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	&:focus {
+		background-color: #fff;
+		border-color: #80bdff;
+		outline: 0;
+		box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+	}
+}
+
+
+.fieldset {
+	display: flex;
+	align-items: center;
+	width:100%;
+	max-width:650px;
+	position: relative;.
+	border:none;
+	padding:0;
+	margin:0;
+	margin-bottom:1rem;
+}
+.input-field {
+	font-family:'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	align-items: center;
+	padding: 10px;
+	color: #262626;
+	width:100%;
+	max-width:525px;
+	height: 45px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+}
+.input-field:focus {
+	background-color:#fff;
+	border-color:#80bdff; outline:0;
+	box-shadow:0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+// END: .input-field

@@ -1,0 +1,9 @@
+form {
+   
+            border: 0 transparent !important;
+            padding: 0px 15px !important;
+
+            .item-inner {
+                border-bottom: 1px solid $formborder !important;
+            }
+} // END: form

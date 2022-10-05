@@ -1,0 +1,25 @@
+// COMPONENTS BADGE DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // USE: A badge is a small, quick visual identification of numeric values 
+        // USE: large labels in lists EXAMPLE: users shifts
+// SECTIONS: Badge
+
+// BADGE ---------------------------------------------------
+.badge {
+    // TODO PRIMARY STYLING
+    // TODO MIXIN size
+    // TODO use color variables in the map for danger, warning, info
+    &[class*="incomplete-badge"] {
+        background: $danger;
+        color: $secondaryfont !important; 
+    } // END: .badge.incomplete-badge
+    &.badge-md-secondary {
+        background: $success;
+    } // END: .badge.badge-md-secondary,  USE: on shift
+    &.badge-md-danger {
+        background: $danger;
+    } // END: .badge.badge-md-danger,  USE: off shift
+} // END: .badge

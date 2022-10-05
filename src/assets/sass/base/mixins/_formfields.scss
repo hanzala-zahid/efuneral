@@ -1,0 +1,24 @@
+// MIXIN FORM DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // notice all variables are lowercase, no camelcase
+// SECTIONS: form defaults, input defaults
+
+// FORM DEFAULTS
+@mixin form {
+    max-width: 650px;
+}
+
+// INPUT DEFAULTS
+@mixin inputs {
+    @include border;
+    @include radius(2rem);
+    padding: .5rem 1rem;
+    transition: background 0.15s;
+    transition: none 0s ease 0s;
+    cursor: pointer;
+    display: inline-flex;
+    text-align: left;
+    -webkit-justify-content: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+} 

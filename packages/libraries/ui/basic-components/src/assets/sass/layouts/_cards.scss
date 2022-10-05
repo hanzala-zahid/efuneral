@@ -1,0 +1,32 @@
+// COMPONENTS CARDS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: notice all variables are lowercase, no camelcase
+// SECTIONS: Card
+
+// Card
+.card {
+    margin: 15px;
+    @include radius(5px); // Currently being over written
+    //box-shadow: 0px 0px 24px 2px $boxshadow; // TODO mixin (webkit etc)
+
+    &-right {
+        clear: right; 
+        display:flex; 
+        justify-content: center; 
+        align-items: center; 
+        padding-left: 5px;
+    } // END: .card .card-right USED FOR items you want to be right aligned without excess space
+    .cardheader {
+        //font-weight: bolder; // TODO mixin / variable and only use bolder/bold
+        //color: $primaryfont; move to mixin in typography variables
+        @include cardheader;
+        
+        &.info {
+            background-color: $info;
+        } // END: .card .cardheader.info
+    } // END: .card .cardheader
+    label, 
+    form input,
+    form select {
+        display: inline-flex;
+    }
+}  // END: .card

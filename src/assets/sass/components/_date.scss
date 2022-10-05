@@ -1,0 +1,37 @@
+// COMPONENTS DATE/TIME PICKERS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: DATEPICKER
+
+// DATEPICKER
+
+.date {
+	position: relative;
+	width: 100%;
+	max-width: 525px;
+	&:after {
+		position: absolute;
+		content: '';
+		background: #FFF url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220621/calendar.svg") right no-repeat;
+		width: 30px;
+		height: 40px;
+		top: 2px;
+		right: 1px;
+		-webkit-appearance: none;
+	}
+}
+
+
+.date {position:relative; width:100%; max-width:525px;}		
+.date:after {
+	position: absolute;
+	content: '';
+	background:#FFF url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220621/calendar.svg") right no-repeat;
+	width:30px;
+	height:40px;
+	top: 2px;
+	right: 1px;
+	-webkit-appearance: none;
+} // END: .date

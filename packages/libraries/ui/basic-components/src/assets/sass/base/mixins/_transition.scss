@@ -1,0 +1,11 @@
+// MIXIN TRANSITION DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: notice all variables are lowercase, no camelcase
+// SECTIONS: transition
+
+@mixin transition($transition: 0.3s) {
+    -webkit-border-transition: $transition;
+    -moz-border-transition: $transition;
+    -ms-border-transition: $transition;
+    -o-border-transition: $transition;
+    transition: $transition;
+}

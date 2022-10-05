@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@efuneral/models": ["packages/libraries/efuneral-models/src/index.ts"],
+      "@efuneral/storybook-collection": [
+        "packages/libraries/ui/storybook-collection/src/index.ts"
+      ],
+      "@efuneral/ui/basic-components": [
+        "packages/libraries/ui/basic-components/src/index.ts"
+      ],
+      "@efuneral/ui/forms": ["packages/libraries/ui/forms/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

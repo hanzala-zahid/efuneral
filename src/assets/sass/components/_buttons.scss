@@ -1,0 +1,258 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// ALL BUTTON STYLES ---------------------------------------------------
+button {
+
+    // ALL CUSTOM BUTTONS STYLED
+    &.btn {
+        &.primary,
+        &.secondary,
+        &.button-md-primary,
+        &.cta,
+        &.icon-only, 
+        &.iconbutton,
+        &.back-button,
+        &.linkbutton,
+        &.button-clear,
+        &.cancel,
+        &.close,
+        &.delete,
+        &.actionbutton
+        &.edit { 
+            @include button;
+        }
+        &.action {
+            padding: 12px 16px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            //@include box-shadow;
+
+            svg {
+                transition: 0.3s;
+            }
+        }  // END: button.btn.action
+    } // END: button.btn
+    // DISABLED Buttons ------------------------------------------------------
+    &[disabled]{
+        background-color: $disabledbg !important;
+        color: $disabledfont !important; 
+        cursor: not-allowed;
+    } // END: button[disabled], [ion-button][disabled]
+    // PRIMARY BUTTONS  ------------------------------------------------------
+    &.primary { 
+        @include primarybutton;
+
+        &:hover,
+        &:hover:not(.disable-hover) {
+            background: lighten($primarybuttonbg, 10%) !important;
+            @include buttonhover;
+            color: $primarybuttonfont !important; 
+        } // END: button.primary:hover
+        &.activated {
+            opacity: 9; 
+        } 
+       
+        &.save {
+            width: 100%;
+        }
+        &.submit {
+
+            &.largebutton {
+                
+            }
+        }
+        &.signin {
+            width: 100%;
+        }
+        &.download {
+            &.largebutton {
+                min-width: 250px;
+            }
+        }
+        &.fileupload {
+
+        }
+    } // END: button.primary USE: Save, Submit
+
+    // SECONDARY BUTTONS ------------------------------------------------------
+    &.secondary {
+        @include secondarybutton;
+        // TODO gray border, use dark gray text vs. matching the design?
+
+        &:hover {
+            background: lighten($secondarybuttonbg, 10%) !important;
+            @include buttonhover;
+        } // END: button.secondary:hover
+        &.activated {
+            opacity: 9; 
+        }
+       
+        &.white {  
+            background-color: $white !important; // TODO THIS IS NOT HOW TO DO COLORS
+            
+            &:hover {
+                background: lighten($white, 10%) !important; // TODO THIS IS NOT HOW TO DO COLORS
+                @include buttonhover;
+            } // END: button.secondary.white:hover
+          
+        } // END: button.secondary.white
+    } // END: button.secondary
+
+    // CALL TO ACTION (CTA) ------------------------------------------------------
+    &.cta, .calltoaction {
+        // ORANGE
+        color: $ctabuttonfont;
+        background-color: $ctabuttonbg; 
+        border: none;
+        text-transform: uppercase;
+
+        &:hover {
+            background: lighten($ctabuttonbg, 10%) !important;
+            @include buttonhover;
+        } // END: button.cta:hover
+        &.activated {
+            opacity: 9; 
+        }
+        &.report {
+            margin: 24px auto;
+            font-weight: bold;
+            width: 80%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                margin-right: 12px;
+            }
+        } // END: button.report
+    } // END: button.cta
+
+    // TERTIARY --------------------------------------------------------------------
+    // START: target all tertiary
+    &.tertiary {
+        @include tertiarybutton;
+
+        &.link-button, 
+        &.linkbutton {
+            color: $blue;
+            text-decoration: underline;
+            transition: 0.3s;
+            background: transparent;
+            border: 0px;
+
+            &:hover {
+                color: $orange;
+            }
+        } // END: button.tertiary.link
+        &.icon-only, 
+        &.iconbutton,
+        &.back-button,
+        &.button-clear,
+        &.cancel,
+        &.close,
+        &.delete {
+            
+        } // END: ALL TERTIARY AKA -  button.icon-only, button.iconbutton, button.back-button, button.linkbutton, button.button-clear, button.cancel, button.close, button.delete
+
+        // START Icon only and back buttons (TERTIARY)
+        &.icon-only, 
+        &.iconbutton,
+        &.back-button {
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.activate,
+            &.activated  {
+                background: transparent !important; // TODO THIS IS NOT HOW TO DO COLORS
+                color: $brandcolor !important;
+            } // END: button.icon-only:hover, button.iconbutton:hover, button.back-button:hover, button.icon-only:focus, button.iconbutton:focus, button.back-button:focus, button.icon-only:active, button.iconbutton:active, button.back-button:active, button.icon-only.activate, button.iconbutton.activate, button.back-button.activate
+        } // END: button.icon-only, button.iconbutton, button.back-button
+
+        // START: link button (TERTIARY)
+        &.linkbutton { // TODO DELETE .buttonsmall
+            color: $linkfont;
+            // TODO remove all extra classes ON the actual html/angular code
+            // todo hover later   
+        } // END: button.linkbutton, button.button-clear
+
+        // START: button clear (TERTIARY)
+        &.button-clear {
+            color: $primaryfont;
+        } // END: button.button-clear
+
+        // START: cancel button  (TERTIARY)
+        &.cancel {
+            color: $cancelbtnfont;
+            background: $cancelbtnbg; 
+            text-transform: uppercase;
+
+            &:hover {
+                background: lighten($cancelbtnbg, 10%) !important;
+                @include buttonhover;
+            } // END: button.cancel:hover
+        } // END: button.cancel
+
+        // START: close button (TERTIARY) USE: top right of modals (sometimes has cancel text but needs to be consistent)
+        &.close { 
+            color: $closebtn;
+
+            .button-inner, span.text {
+                display: block;
+            } 
+        } // END: button.close
+
+        // START: delete button  (TERTIARY)
+        &.delete {
+            color: $danger;  // TODO THIS IS NOT HOW TO DO COLORS
+            
+        } // END: button.delete
+    } // END: button.tertiary
+    // FLOATING ACTION BUTTON -- CIRCLE (TERTIARY) --------------------------------------------------------------------
+    &.tertiary.actionbutton {
+        @include actionbutton;
+        background: $actionbuttonbg !important; 
+        color: $primarybuttonfont; 
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.activate,
+        &.activated,
+        &:hover:not(.disable-hover) {
+            background: lighten($actionbuttonbg, 10%) !important; 
+            color: $primarybuttonfont; 
+        }
+        &.activated {
+            opacity: 9; 
+        }
+        // START: circle DELETE BUTTON  (TERTIARY - floating action)
+        &.delete { 
+            background: $danger !important; // TODO THIS IS NOT HOW TO DO COLORS
+        } // END: button.actionbutton.delete
+       
+    } // END: button.actionbutton
+} // END: button 
+
+.button {
+    // START: large screen filter buttons
+    .large-screen-filter-buttons {
+        // TODO @extend button.iconbutton;
+        background: transparent !important;
+    } // END: .button.large-screen-filter-buttons
+} // END: .button

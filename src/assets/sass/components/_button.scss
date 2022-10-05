@@ -1,0 +1,51 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// BLUE BUTTON STYLES ---------------------------------------------------
+
+.btn-blue-full {
+	cursor: pointer;
+	max-width: 650px;
+	width: 100%;
+	display: block;
+	outline: none;
+	height: 50px;
+	line-height: 50px;
+	background-color: #004990;
+	border-radius: 5px;
+	color: #FFF;
+	font-family: 'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	border: none;
+}
+.btn-blue-half {
+	cursor: pointer;
+	max-width:250px;
+	width: 100%;
+	display: block;
+	outline: none;
+	height: 50px;
+	line-height: 50px;
+	background-color: #004990;
+	border-radius: 5px;
+	color: #FFF;
+	font-family: 'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	border: none;
+}
+
+// END: .button

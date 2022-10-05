@@ -1,0 +1,240 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// FORM STYLES ---------------------------------------------------
+
+.fieldset {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 650px;
+	position: relative;
+	. border: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1rem;
+}
+.input-field {
+	font-family: 'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	align-items: center;
+	padding: 10px;
+	color: #262626;
+	width: 100%;
+	max-width: 525px;
+	height: 45px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	&:focus {
+		background-color: #fff;
+		border-color: #80bdff;
+		outline: 0;
+		box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+	}
+}
+.input-lable {
+	display: flex;
+	width: 120px;
+	min-width: 120px;
+	margin-right: 5px;
+	font-family: 'Helvetica Neue';
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 0;
+	>.require {
+		margin-left: 5px;
+		color: #CB3451;
+	}
+	>.span {
+		display:flex;
+		font-family:'Helvetica Neue';
+		font-weight:400;
+		font-size:16px;
+		color:#2e2e2e;
+	}
+}
+
+.select-field {
+	align-items: center;
+	width: 100%;
+	max-width: 525px;
+	position: relative;
+	-webkit-appearance: none;
+	&:after {
+		position: absolute;
+		content: '';
+		background: url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/select.png") right no-repeat;
+		width: 30px;
+		height: 40px;
+		top: 2px;
+		right: 1px;
+		-webkit-appearance: none;
+	}
+	>.select {
+		font-family: 'Helvetica Neue';
+		-webkit-appearance: none;
+		font-weight: 400;
+		font-size: 16px;
+		padding: 10px;
+		color: #838383;
+		width: 100%;
+		max-width: 525px;
+		height: 45px;
+		background: #FFFFFF;
+		border: 1px solid #CCCCCC;
+		border-radius: 5px;
+		position: relative;
+		&:focus {
+			background-color: #fff;
+			border-color: #80bdff;
+			outline: 0;
+			box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+		}
+	}
+}
+.date {
+	position: relative;
+	width: 100%;
+	max-width: 525px;
+	&:after {
+		position: absolute;
+		content: '';
+		background: #FFF url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220621/calendar.svg") right no-repeat;
+		width: 30px;
+		height: 40px;
+		top: 2px;
+		right: 1px;
+		-webkit-appearance: none;
+	}
+}
+.btn-blue {
+	cursor: pointer;
+	width: 100%;
+	display: block;
+	margin-top: 10px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #004990;
+	border-radius: 5px;
+	color: #FFF;
+	font-family: 'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	border: none;
+}
+
+
+
+
+.fieldset {
+	display: flex;
+	align-items: center;
+	width:100%;
+	max-width:650px;
+	position: relative;.
+	border:none;
+	padding:0;
+	margin:0;
+	margin-bottom:1rem;
+}
+.input-field {
+	font-family:'Helvetica Neue';
+	font-weight: 400;
+	font-size: 16px;
+	align-items: center;
+	padding: 10px;
+	color: #262626;
+	width:100%;
+	max-width:525px;
+	height: 45px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+}
+.input-field:focus {
+  background-color: #fff;
+  border-color: #80bdff; outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+.input-lable {
+	display: flex;
+	width: 120px;
+	min-width:120px;
+	margin-right: 5px;
+	font-family: 'Helvetica Neue';
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom:0;
+}
+.input-lable > .require {
+	margin-left: 5px;
+	color: #CB3451;
+}
+.select-field {
+	align-items: center;
+	width:100%;
+	max-width:525px;
+	position: relative;
+	-webkit-appearance: none;
+}		
+.select-field:after {
+	position: absolute;
+	content: '';
+	background:url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/select.png") right no-repeat;
+	width:30px;
+	height:40px;
+	top: 2px;
+	right: 1px;
+	-webkit-appearance: none;
+}
+.select-field > .select {
+	font-family:'Helvetica Neue';
+	-webkit-appearance: none;
+	font-weight: 400;
+	font-size: 16px;
+	padding: 10px;
+	color: #838383;
+	width:100%;
+	max-width:525px;
+	height: 45px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	position: relative;
+}
+.select-field > .select:focus {
+  background-color: #fff;
+  border-color: #80bdff; outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+.date {position:relative; width:100%; max-width:525px;}		
+.date:after {
+	position: absolute;
+	content: '';
+	background:#FFF url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220621/calendar.svg") right no-repeat;
+	width:30px;
+	height:40px;
+	top: 2px;
+	right: 1px;
+	-webkit-appearance: none;
+}
+
+.btn-blue {
+	cursor:pointer; width:100%; display:block; margin-top:10px;
+	height:50px; line-height:50px; background-color:#004990;
+	border-radius:5px; color:#FFF; font-family:'Helvetica Neue';
+	font-weight:400; font-size:16px; text-align:center; border:none;
+} // END: form

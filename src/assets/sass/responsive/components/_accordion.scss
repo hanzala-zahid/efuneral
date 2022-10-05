@@ -1,0 +1,29 @@
+// START: Small devices (landscape phones, 576px and up) =========================================== //
+@media (min-width: 576px) {
+
+}
+// END: Small devices (landscape phones, 576px and up)  ===================================== //
+
+// START: Medium devices (tablets, 768px and up) ================================================== //
+@media (min-width: 768px) {
+
+}
+// END: Medium devices (tablets, 768px and up) ============================================== //
+
+// Medium devices (tablets, 768px and up in portrait orientation ) ======================== //
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+}
+// END: Medium devices (tablets, 768px and up in portrait orientation ) ===================== //
+
+// START: Large devices (desktops, 992px and up) ================================================== //
+@media (min-width: 992px) {
+
+} // END: min-width: 992px
+// END: Large devices (desktops, 992px and up) ============================================== //
+
+// START: Extra large devices (large desktops, 1200px and up)====================================== //
+@media (min-width: 1200px) {
+
+} // END: min-width: 1200px
+// END: Extra large devices (large desktops, 1200px and up)================================== //

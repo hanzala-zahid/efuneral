@@ -1,0 +1,19 @@
+// COMPONENTS FORM DROPDOWN DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: ion select / dropdown
+
+
+.dropdown,
+.select {
+    // @extend form;
+    // @extend inputs;
+    width: 100%;
+    max-width: 650px;
+    clear:both;
+    display: block;
+    padding: 10px;
+} // END:  .dropdown
+ 

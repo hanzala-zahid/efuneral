@@ -1,0 +1,89 @@
+// RESETS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: ION APP WRAPPER, HTML, BODY, hidden, floats, text align, selectable, activated/hover/focus/active
+
+
+
+// HTML ------------------------------------------------------------------------------------
+html {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: 100%; // TODO make mixin
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+} 
+  
+// BODY ------------------------------------------------------------------------------------
+body {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    //font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-user-drag: none;
+    -ms-content-zooming: none;
+    -ms-touch-action: manipulation; // TODO MIXIN
+    touch-action: manipulation;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    @include userselect(none);
+}
+
+// HIDDEN  ------------------------------------------------------------------------------------
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+// FLOATS  ------------------------------------------------------------------------------------
+.float-left, .left {
+    float: left;
+} // END: .float-left, .left
+
+.float-right, .right {
+    float: right;
+} // END: .float-right, .right
+
+.float-center, .center {
+    float: center;
+} // END: .float-center, .center
+
+// TEXT ALIGN  ------------------------------------------------------------------------------------
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+
+//make text selectable ------------------------------------------------------------------------------------
+.selectable-text {
+    @include userselect;
+} // END: .selectable-text
+
+// HOVER / FOCUS / ACTIVE ------------------------------------------------------------------------------------
+.activated {
+    background-color: $activatedbg !important;
+    opacity: .4;
+}
+
+// CLEAR
+.clearfix {
+    clear: both;
+} // END: .clearfix

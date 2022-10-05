@@ -1,0 +1,18 @@
+// COMPONENTS ICONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: notice all variables are lowercase, no camelcase
+// IMPLEMENTATION HELP https://ionicons.com/usage
+// SECTIONS: icons
+// Icons
+
+.select-icon {
+    height: auto !important;
+    color: $primaryfont;
+    padding-right: 15px;
+    .select-icon-inner {
+        color: $primaryfont;
+    }
+} // END: .select-icon USE: dropdowns
+// SAFARI FIXES
+.icon-inner {
+    display: none;
+}

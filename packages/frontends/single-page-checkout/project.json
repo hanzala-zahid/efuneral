@@ -1,0 +1,85 @@
+{
+  "root": "packages/frontends/single-page-checkout",
+  "sourceRoot": "packages/frontends/single-page-checkout/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/packages/frontends/single-page-checkout",
+        "index": "packages/frontends/single-page-checkout/src/index.html",
+        "baseHref": "/",
+        "main": "packages/frontends/single-page-checkout/src/main.tsx",
+        "polyfills": "packages/frontends/single-page-checkout/src/polyfills.ts",
+        "tsConfig": "packages/frontends/single-page-checkout/tsconfig.app.json",
+        "assets": [
+          "packages/frontends/single-page-checkout/src/favicon.ico",
+          "packages/frontends/single-page-checkout/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/single-page-checkout/src/environments/environment.ts",
+              "with": "packages/frontends/single-page-checkout/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "single-page-checkout:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "single-page-checkout:build:development"
+        },
+        "production": {
+          "buildTarget": "single-page-checkout:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/single-page-checkout/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontends/single-page-checkout"],
+      "options": {
+        "jestConfig": "packages/frontends/single-page-checkout/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

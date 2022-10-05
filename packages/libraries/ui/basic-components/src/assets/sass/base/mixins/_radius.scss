@@ -1,0 +1,19 @@
+// MIXIN BORDERRADIUS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: notice all variables are lowercase, no camelcase
+// SECTIONS: radius
+
+@mixin radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}

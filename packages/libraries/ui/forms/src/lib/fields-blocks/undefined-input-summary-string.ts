@@ -1,0 +1,1 @@
+export const UNDEFINED_INPUT_SUMMARY_STRING = 'Not provided';

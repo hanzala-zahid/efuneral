@@ -1,0 +1,21 @@
+// DV EDIT 2020 MARCH ******************************************************************
+//As you can see, there is only one Sass file at the root level: main.scss. 
+/*All the other files are divided into appropriate folders and prefixed with an underscore 
+(_) to tell Sass they are partial .scss files that shouldn’t be compiled to .css files. 
+Indeed, it is the base file’s role to import and merge all of those.
+“One file to rule them all,
+One file to find them,
+One file to bring them all,
+And in the Sass way merge them.”
+— J.R.R. Tolkien */
+
+// IMPORTANT: PULL in modules only in this file
+@import "vendors/module"; // must be first             USE: external libraries and frameworks
+@import "base/module"; // must be second --            USE: Boilerplate variables, resets, mixins, helpers, functions
+@import "components/module";                        // USE: specific modules, sass for component styling like input, tooltip etc.
+@import "layouts/module";                           // USE: styles sections of the layout like header, footer, grid, forms
+//@import "hacks/module";                             // USE: folder of shame is for hack code intended to be deleted
+@import "pages/module";                             // USE: page-specific styles TRY NOT TO USE
+@import "responsive/module"; // must be second to last
+@import "themes/module"; // must be last to overwrite   USE: for multiple themes, inside folders should match the overall current sass architecture to overwrite as a child theme
+

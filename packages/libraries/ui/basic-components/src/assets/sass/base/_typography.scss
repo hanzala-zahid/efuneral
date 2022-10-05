@@ -1,0 +1,139 @@
+// TYPOGRAPHY IMPLEMENTATION DV EDIT 2020 MARCH ******************************************************************
+// FILE NOTES:
+    // !!IMPORTANT: ALL typography (bold, sizing etc.) will be set in this file or the related mixin (base/mixins/typography)
+    // This file owns all font weight, line height, font spacing and font sizes for the entire app
+// SECTIONS: reset, headers, paragraph, labels, elements, buttons, cards, badge, modals, components
+
+// RESETS ---------------------------------------------------------------------------------------
+body, HTML {
+    font-size: 16px !important; // DO NOT CHANGE THIS IT SETS THE FONT SIZING FOR ALL OTHER FONTS, IT'S A RESET
+    font-family: 'Helvetica Neue';
+} // END: body, html
+
+// HEADERS --------------------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 { 
+    line-height: 1.2;
+} // END: h1, h2, h3, h4, h5, h6
+ 
+// .toolbar-title-md are the top of page titles
+h1 {
+    @include h1;   
+}  // END: h1, .toolbar-title-md   
+
+h2 {
+    @include h2; 
+} // END: h2
+h3 {
+    @include h3;
+} // END: h3
+h4 {
+    @include h4;
+}  // END: h4
+h5 {
+    @include h5;
+} // END: h5
+h6
+{
+    @include h6;
+} // END: h6, .dollar
+
+// PARAGRAPHS  --------------------------------------------------------------------------------------------
+p,
+.label // this is here because it is NOT used on labels its used all over the place including nav
+{
+    @include p;
+} // END: p, .label
+ 
+// LABELS AND ELEMENTS ------------------------------------------------------------------------------------
+label {
+    @include label;  
+
+    .required {
+        color: $required;
+    }
+} // END: label
+
+// RARELY USED FONT SIZES ----------------------------------------------------------------------------------
+// XXL FONT
+.fontxxl {
+    @include fontxxl;
+} // END: .fontxxl
+// XL FONT
+.fontxl {
+    @include fontxl;
+} // END: .fontxl
+.fontlarge,
+
+// SMALL FONT
+.fontsm {
+    @include fontsm;
+} // END: .fontsm, .high-indicator-worker .indicator-list
+
+// USE SMALLEST FONT 
+// FOOTER ------------------------------------------------
+.footer p
+.close span.text // USE: close button top right of modals
+{
+    @include fontxsm;
+} // END: .deployed-devices-content, .footer p
+
+
+//FORMS -----------------------------------------------------
+// input fields
+input,
+.dropdown, .select,
+ .datetime {
+    @include p;
+} // END: input
+
+// BUTTON TYPOGRAPHY -----------------------------------------
+button {
+    @include p;
+} // END: button
+
+// HEADER & NAV ----------------------------------------------
+.side-nav button {
+    @include p;
+} // END: .side-nav button
+
+// CARD TYPOGRAPHY --------------------------------------------
+.card {
+    //ADD h1-h6,p
+    h1 {
+        @include h1;
+    }
+    h2 {
+        @include h3;
+    } // END: .card h2
+    h3 {
+        @include h3;
+    }
+    h4 {
+        @include h4;
+    }
+    h5 {
+        @include h5;
+    }
+    h6 {
+        @include h6;
+    } 
+} // END: .card h1, h2, h3, h4, h5, h6
+
+// BADGE  ------------------------------------------------------------------------------
+.badge {
+    @include p;
+} // END: .badge, USE: large labels in lists EXAMPLE: users shifts
+
+// MODALS ------------------------------------------------------------------------------
+.modal {
+    .modal-header {
+        @include h2;
+    }
+}
+
+// ALERT MESSAGE -----------------------------------------------------------------------
+.alertmsg {
+    
+        @include fontxxl;    
+ 
+}

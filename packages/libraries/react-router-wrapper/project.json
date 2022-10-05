@@ -1,0 +1,45 @@
+{
+  "root": "packages/libraries/react-router-wrapper",
+  "sourceRoot": "packages/libraries/react-router-wrapper/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/libraries/react-router-wrapper",
+        "tsConfig": "packages/libraries/react-router-wrapper/tsconfig.lib.json",
+        "project": "packages/libraries/react-router-wrapper/package.json",
+        "entryFile": "packages/libraries/react-router-wrapper/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/libraries/react-router-wrapper/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/libraries/react-router-wrapper/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/libraries/react-router-wrapper"],
+      "options": {
+        "jestConfig": "packages/libraries/react-router-wrapper/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

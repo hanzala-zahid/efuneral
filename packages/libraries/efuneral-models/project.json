@@ -1,0 +1,32 @@
+{
+  "root": "packages/libraries/efuneral-models",
+  "sourceRoot": "packages/libraries/efuneral-models/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/libraries/efuneral-models",
+        "main": "packages/libraries/efuneral-models/src/index.ts",
+        "tsConfig": "packages/libraries/efuneral-models/tsconfig.lib.json",
+        "assets": ["packages/libraries/efuneral-models/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/libraries/efuneral-models/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/libraries/efuneral-models"],
+      "options": {
+        "jestConfig": "packages/libraries/efuneral-models/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

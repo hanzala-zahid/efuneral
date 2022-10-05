@@ -1,0 +1,85 @@
+{
+  "root": "packages/frontends/contract-signing-app",
+  "sourceRoot": "packages/frontends/contract-signing-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/packages/frontends/contract-signing-app",
+        "index": "packages/frontends/contract-signing-app/src/index.html",
+        "baseHref": "/",
+        "main": "packages/frontends/contract-signing-app/src/main.tsx",
+        "polyfills": "packages/frontends/contract-signing-app/src/polyfills.ts",
+        "tsConfig": "packages/frontends/contract-signing-app/tsconfig.app.json",
+        "assets": [
+          "packages/frontends/contract-signing-app/src/favicon.ico",
+          "packages/frontends/contract-signing-app/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/contract-signing-app/src/environments/environment.ts",
+              "with": "packages/frontends/contract-signing-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "contract-signing-app:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "contract-signing-app:build:development"
+        },
+        "production": {
+          "buildTarget": "contract-signing-app:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/contract-signing-app/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontends/contract-signing-app"],
+      "options": {
+        "jestConfig": "packages/frontends/contract-signing-app/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

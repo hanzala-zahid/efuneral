@@ -1,0 +1,45 @@
+// COMPONENTS ALL BUTTONS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+        // ALL Typography & Colors are managed in the base folder as variables and mixins
+// SECTIONS: Buttons: Primary, Secondary, CTA, Tertiary: Link Button
+
+// TODO 
+    // SEE ALSO: base/mixins/buttons
+    // hover states
+   
+
+// FORM LABEL ---------------------------------------------------
+
+.input-lable {
+	display: flex;
+	width: 120px;
+	min-width: 120px;
+	margin-right: 5px;
+	font-family: 'Helvetica Neue';
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 0;
+	>.require {
+		margin-left: 5px;
+		color: #CB3451;
+	}
+}
+
+
+.input-lable {
+	display: flex;
+	width: 120px;
+	min-width:120px;
+	margin-right: 5px;
+	font-family: 'Helvetica Neue';
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom:0;
+}
+.input-lable > .require {
+	margin-left: 5px;
+	color: #CB3451;
+} // END: .input-lable

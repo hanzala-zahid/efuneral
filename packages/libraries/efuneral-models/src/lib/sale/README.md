@@ -1,0 +1,2 @@
+These models should hold things specific to sales. (Timings / Contact IDs / Product IDs / etc.)
+They should not hold things specific to things that sales reference. (Contacts / Products / Contracts / etc.)

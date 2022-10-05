@@ -1,0 +1,23 @@
+image: node:14.17.3
+
+pipelines:
+  branches:
+    main:
+      - step:
+          script:
+            - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            - yarn
+            - export DEPLOYMENT_ENVIRONMENT="test"
+            - yarn run deploy
+    production:
+      - step:
+          script:
+            - export AWS_ACCESS_KEY_ID=$PROD_AWS_ACCESS_KEY_ID
+            - export AWS_SECRET_ACCESS_KEY=$PROD_AWS_SECRET_ACCESS_KEY
+            - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+            - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            - yarn
+            - export DEPLOYMENT_ENVIRONMENT="prod"
+            - yarn run deploy
+            - export DEPLOYMENT_ENVIRONMENT="demo"
+            - yarn run deploy

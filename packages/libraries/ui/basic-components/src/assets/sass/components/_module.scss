@@ -1,0 +1,43 @@
+// COMPONENTS FILES import here
+// NOTE: add all files in alphabetical order or comment that it needs to be placed out of order and why
+
+@import "buttons"; //  BUTTONS -- must be toward the top
+@import "lists"; // LISTS -- must be toward the top
+
+// DATA VISUALS --------------------------------
+@import "progressbar"; // PROGRESSBAR 
+
+
+ // FORM FIELDS ---------------------------------
+ @import "checkbox"; //  CHECKBOX
+ @import "datetime"; //  DATE AND TIME PICKERS
+ @import "dropdown"; //  DROPDOWN
+ @import "filedownload"; //  FILE DOWNLOAD
+ @import "fileupload"; //  FILE UPLOAD 
+ @import "filter"; //  FILTER 
+ @import "form"; //  FORM
+ @import "input"; //  input
+ @import "label"; // LABELS
+ @import "pagination"; //  PAGINATION
+ @import "password"; //  PASSWORD
+ @import "placeholder"; //  PLACEHOLDER text 
+ @import "radio"; //  RADIO 
+ @import "search"; //  SEARCH 
+ @import "table"; //  table
+ @import "toggle"; //  TOGGLE 
+ 
+@import "accordion";
+@import "alert"; // system alert messages
+@import "badge";
+@import "dragreorder"; // drag to reorder
+@import "logo";
+@import "notifications";
+@import "popover";
+@import "progressindicator"; // PROGRESS INDICATOR
+@import "refresher";
+@import "tabs";
+@import "toolbar";
+@import "tooltip"; // tooltip contextual help
+@import "training";
+@import "userimg"; // worker-thumbnail
+@import "modal"; // NEEDS to be at the end

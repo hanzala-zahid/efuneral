@@ -1,0 +1,51 @@
+// COMPONENTS FORM FILTER DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: component-filter-bar, filter-bar
+
+.filter {    
+
+    // START: large screen filter buttons
+    .large-screen-filter-buttons {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+    } // END: filter-bar .large-screen-filter-buttons , component-filter-bar .large-screen-filter-buttons 
+
+    // START: small screen filter buttons 
+    .small-screen-filter-buttons {
+
+        button p {
+            font-size: 1rem; // todo
+            margin:0px;
+        } // END: filter-bar .small-screen-filter-buttons button p, component-filter-bar .small-screen-filter-buttons button p
+    }  // END: filter-bar .small-screen-filter-buttons, component-filter-bar .small-screen-filter-buttons
+
+    /* Larger than a phone */
+    @media (min-width: 737px) {
+        .small-screen-filter-buttons {
+            display: none;
+        }
+
+    } // TODO move to responsive
+
+    /* Small devices such as phone */
+    @media (max-width: 736px) {
+        .large-screen-filter-buttons {
+            display:none;
+        }
+    }
+} // END: filter-bar, component-filter-bar
+
+// filter-bar
+// USE: top of the page has filters inside
+.filter {
+
+    // START: large and small screen filter buttons (both)
+    .large-screen-filter-buttons, 
+    .small-screen-filter-buttons button {
+        background: transparent !important;
+    } // END: filter-bar .large-screen-filter-buttons, filter-bar .small-screen-filter-buttons button
+} // END: filter-bar

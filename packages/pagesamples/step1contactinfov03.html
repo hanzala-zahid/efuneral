@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eFuneral wizard 1 - Contact Information</title>
+    <style>		
+		body {
+				font-family: 'Helvetica Neue' 
+			}
+		h1, h2, h3, h4, h5, h6, p {
+			max-width: 650px;;
+		}
+		/*--- Progress Bar---*/		
+		.wizard {
+			list-style: none;
+			margin:0 0 2rem 0;
+			padding:0;
+			width: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			counter-reset: wizard;
+		}
+		.wizard .step {
+			-ms-flex: 1 1 0;
+			flex: 1 1 0;
+			margin-top: 0;
+			min-height: 1rem;
+			position: relative; 
+			text-align: center;
+		}
+		.wizard .step:not(:first-child)::before {
+			background:#44a793;
+			content: "";
+			height:10px;
+			left: -50%;
+			position: absolute;
+			top:22px;
+			width: 100%;
+		}
+		.wizard .step a {
+			color: #cbcbcb;
+			font-weight:bold;
+			display: inline-block;
+			padding:55px 10px 0;
+			text-decoration: none;
+		}
+		.wizard .step a::before {
+			background: #44a793;
+			border-radius: 50%;
+			content: "";
+			display: block;
+			height:3rem;
+			line-height:2.7rem;
+			left: 50%;
+			position: absolute;
+			top: .2rem;
+			transform: translateX(-50%);
+			width:3rem;
+			z-index: 1;
+			font-weight:600;
+			content: counter(wizard);
+			counter-increment: wizard;
+			color:#FFF;
+			font-size:1.5rem;
+			text-align: center;
+		}
+		.wizard .step.active a, .wizard .step a.current {color:#000;}
+		.wizard .step.active a::before {background:#44a793;}
+		.wizard .step.active ~ .step::before   {background:#CCC;}
+		.wizard .step.active ~ .step a::before {background:#CCC;}
+		
+		
+		/*--- Contact Information Box ---*/
+		
+		.contactbox {
+			max-width:690px;
+			position: relative;
+			width: 100%;
+		}
+
+		.card { 
+			padding:20px;
+			border:1px solid #CCC;
+			border-radius:4px; margin-bottom:1.3rem;
+			width:100%; background-color:#FFF;
+			max-width:690px;
+		}
+		.card .title {
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			margin-bottom:20px;
+			font-weight:600;
+		}
+		.card .title h2, .card .title a {
+			color:#000;
+		}
+		.card .title h2 {
+			font-family:'Helvetica Neue';
+			font-weight:bold;
+			color:#000;
+			font-size:24px;
+			margin:0;
+		}
+		
+		.contactbox h1 {
+			font-family:'Helvetica Neue';
+			font-weight:bold;
+			color:#000;
+			font-size:28px;
+			margin-bottom:5px;
+		}
+		.contactbox p {
+			font-family:'Helvetica Neue';
+			font-weight:400;
+			color:#888;
+			font-size:16px;
+			margin-bottom:20px;
+		}
+		[type="input"], 
+		[type="email"], 
+		[type="text"],
+		[type="date"],
+		select { 
+			margin-bottom: 10px;
+			font-family:'Helvetica Neue';
+			font-weight: 400;
+			font-size: 16px;
+			align-items: center;
+			padding: 10px;
+			color: #262626;
+			width:100%;
+			max-width:650px;
+			height: 45px;
+			background: #FFFFFF;
+			border: 1px solid #CCCCCC;
+			border-radius: 5px;
+		}
+		[type="input"], [type="email"], [type="text"]:focus {
+		  background-color: #fff;
+		  border-color: #80bdff; outline: 0;
+		  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+		}
+		label {
+			display: flex;
+			width: 120px;
+			min-width:120px;
+			margin-right: 5px;
+			font-family: 'Helvetica Neue';
+			font-weight: 700;
+			font-size: 16px;
+			margin-bottom:5px;
+		}
+		label > .require {
+			margin-left: 5px;
+			color: #CB3451;
+		}
+		select {
+			align-items: center;
+			width:100%;
+			max-width:650px;
+			position: relative;
+			-webkit-appearance: none;
+		}		
+		select:after {
+			position: absolute;
+			content: '';
+			background:url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/select.png") right no-repeat;
+			width:30px;
+			height:40px;
+			top: 2px;
+			right: 1px;
+			-webkit-appearance: none;
+		}
+		select > .select {
+			font-family:'Helvetica Neue';
+			-webkit-appearance: none;
+			font-weight: 400;
+			font-size: 16px;
+			padding: 10px;
+			color: #838383;
+			width:100%;
+			max-width:650px;
+			height: 45px;
+			background: #FFFFFF;
+			border: 1px solid #CCCCCC;
+			border-radius: 5px;
+			position: relative;
+		}
+		select > .select:focus {
+		  background-color: #fff;
+		  border-color: #80bdff; outline: 0;
+		  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+		}
+		.date {position:relative; width:100%; max-width:650px;}		
+		.date:after {
+			position: absolute;
+			content: '';
+			background:#FFF url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220621/calendar.svg") right no-repeat;
+			width:30px;
+			height:40px;
+			top: 2px;
+			right: 1px;
+			-webkit-appearance: none;
+		}
+		label {
+			display:flex;
+			width:130px;
+			margin-right:5px;
+			font-family:'Helvetica Neue';
+			font-weight:600;
+			font-size:16px;
+			margin-bottom:5px;
+			color:#000;
+		}
+
+		.radio-control {
+			width:100%;
+			display: block;
+			margin-bottom:10px;
+		}
+		[type="radio"]:checked,
+		[type="radio"]:not(:checked) {
+			position: absolute;
+			left: -9999px;
+		}
+		[type="radio"]:checked + label,
+		[type="radio"]:not(:checked) + label
+		{
+			position: relative;
+			padding-left: 28px;
+			cursor: pointer;
+			line-height: 20px;
+			display: inline-block;
+			color: #000;
+		}
+		[type="radio"]:checked + label:before,
+		[type="radio"]:not(:checked) + label:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 18px;
+			height: 18px;
+			border: 1px solid #ddd;
+			border-radius: 100%;
+			background: #fff;
+		}
+		[type="radio"]:checked + label:after,
+		[type="radio"]:not(:checked) + label:after {
+			content: '';
+			width:18px;
+			height:18px;
+			background: #FFF;
+			position: absolute;
+			top:0; left:0;
+			border:#004990 6px solid;
+			border-radius: 100%;
+			-webkit-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+		}
+		[type="radio"]:not(:checked) + label:after {
+			opacity: 0;
+			-webkit-transform: scale(0);
+			transform: scale(0);
+		}
+		[type="radio"]:checked + label:after {
+			opacity: 1;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+		.info-icon {
+			width:16px;
+			height:16px;
+			border:#000 1px solid;
+			border-radius:50%;
+			display:inline-block;
+			margin-left:5px;
+			border-radius:50%;
+			opacity:0.4;
+			cursor:pointer;
+			text-align:center;
+			line-height:15px;
+			font-size:12px;
+		}
+		button.primary {
+			cursor:pointer; 
+			width:100%; 
+			display:block; 
+			margin-top:10px;
+			height:50px; 
+			line-height:50px; 
+			background-color:#004990;
+			border-radius:5px; 
+			color:#FFF; 
+			font-family:'Helvetica Neue';
+			font-weight:400; 
+			font-size:16px; 
+			text-align:center; 
+			border:none;
+		    text-transform: uppercase;
+		}
+		button:hover,
+        button:hover:not(.disable-hover) {
+            background: #0061ff !important;
+            color: #0061ff !important; 
+        }
+		
+		/*---- Order Summary ---- */
+		
+		.orders  {max-width:500px;}
+		.accordion {
+			display:flex; margin:5px 0;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+		}
+		.accordion label {
+			font-family:'Helvetica Neue';
+			font-weight:600;
+			font-size:16px;
+			color:#000;
+		}
+		.accordion label img {
+			width:12px; margin-left:5px;
+		}
+		.accordion + .collapse {
+			background-color:#f8f9fb;
+			padding:7px;
+			border-radius:5px;
+			font-family:'Helvetica Neue';
+		}
+		.accordion .span {
+			font-family:'Helvetica Neue';
+			font-weight:bold;
+			font-size:15px;
+			line-height: 15px;
+			color:#000;
+			text-align: right;
+		}
+		.accordion .span small {
+			display: block;
+			color:#3e3e3e;
+		}
+		.success {color:#00955F !important;}
+		
+		/*--- SASS Style ---*/
+		.wizard 
+			list-style: none 
+			margin: 0 0 2rem 0 
+			padding: 0 
+			width: 100% 
+			display: flex 
+			flex-wrap: nowrap 
+			counter-reset: wizard 
+			.step 
+				-ms-flex: 1 1 0 
+				flex: 1 1 0 
+				margin-top: 0 
+				min-height: 1rem 
+				position: relative 
+				text-align: center 
+				&:not(:first-child)::before 
+					background: #44a793 
+					content: "" 
+					height: 10px 
+					left: -50% 
+					position: absolute 
+					top: 22px 
+					width: 100% 
+				a 
+					color: #cbcbcb 
+					font-weight: bold 
+					display: inline-block 
+					padding: 55px 10px 0 
+					text-decoration: none 
+					&::before 
+						background: #44a793 
+						border-radius: 50% 
+						content: "" 
+						display: block 
+						height: 3rem 
+						line-height: 2.7rem 
+						left: 50% 
+						position: absolute 
+						top: .2rem 
+						transform: translateX(-50%) 
+						width: 3rem 
+						z-index: 1 
+						font-weight: 600 
+						content: counter(wizard) 
+						counter-increment: wizard 
+						color: #FFF 
+						font-size: 1.5rem 
+						text-align: center 
+				&.active 
+					a 
+						&::before 
+							background: #44a793 
+					& ~ .step 
+						&::before 
+							background: #CCC 
+						a 
+							&::before 
+								background: #CCC 
+		.wizard .step.active a, .wizard .step a.current 
+			color: #000 
+		.contactbox 
+			max-width: 690px 
+			position: relative 
+			width: 100% 
+			h1 
+				
+				font-weight: bold 
+				color: #000 
+				font-size: 28px 
+				margin-bottom: 5px 
+			p 
+				
+				font-weight: 400 
+				color: #888 
+				font-size: 16px 
+				margin-bottom: 20px 
+		.card 
+			padding: 20px 
+			border: 1px solid #CCC 
+			border-radius: 4px 
+			margin-bottom: 1.3rem 
+			width: 100% 
+			background-color: #FFF 
+			max-width: 690px 
+			.title 
+				display: flex 
+				-webkit-box-align: center 
+				-ms-flex-align: center 
+				align-items: center 
+				-webkit-box-pack: justify 
+				-ms-flex-pack: justify 
+				justify-content: space-between 
+				margin-bottom: 20px 
+				font-weight: 600 
+				h2 
+					
+					font-weight: bold 
+					color: #000 
+					font-size: 24px 
+					margin: 0 
+		.card .title h2, .card .title a 
+			color: #000 
+		label 
+			display: flex 
+			width: 130px 
+			margin-right: 5px 
+			
+			font-weight: 600 
+			font-size: 16px 
+			margin-bottom: 5px
+			color: #000 
+		.span 
+			display: flex 
+			
+			font-weight: 400 
+			font-size: 16px 
+			color: #2e2e2e 
+		[type="input"], [type="email"], [type="text"] 
+			
+			font-weight: 400 
+			font-size: 16px 
+			align-items: center 
+			padding: 10px 
+			color: #262626 
+			width: 100% 
+			max-width: 650px 
+			height: 45px 
+			background: #FFFFFF 
+			border: 1px solid #CCCCCC 
+			border-radius: 5px 
+			&:focus 
+				background-color: #fff 
+				border-color: #80bdff 
+				outline: 0 
+				box-shadow: 0 0 0 .2rem rgba(0,123,255,.25) 
+		label 
+			display: flex 
+			width: 120px 
+			min-width: 120px 
+			margin-right: 5px 
+			
+			font-weight: 700 
+			font-size: 16px 
+			margin-bottom: 5px 
+			& > .require 
+				margin-left: 5px 
+				color: #CB3451 
+		select 
+			align-items: center 
+			width: 100% 
+			max-width: 650px 
+			position: relative 
+			-webkit-appearance: none 
+			&:after 
+				position: absolute 
+				content: '' 
+				background: url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/select.png") right no-repeat 
+				width: 30px 
+				height: 40px 
+				top: 2px 
+				right: 1px 
+				-webkit-appearance: none 
+			& > .select 
+				
+				-webkit-appearance: none 
+				font-weight: 400 
+				font-size: 16px 
+				padding: 10px 
+				color: #838383 
+				width: 100% 
+				max-width: 650px 
+				height: 45px 
+				background: #FFFFFF 
+				border: 1px solid #CCCCCC 
+				border-radius: 5px 
+				position: relative 
+				&:focus 
+					background-color: #fff 
+					border-color: #80bdff 
+					outline: 0 
+					box-shadow: 0 0 0 .2rem rgba(0,123,255,.25) 
+		.date 
+			position: relative 
+			width: 100% 
+			max-width: 650px 
+			&:after 
+				position: absolute 
+				content: '' 
+				background: #FFF url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220621/calendar.svg") right no-repeat 
+				width: 30px 
+				height: 40px 
+				top: 2px 
+				right: 1px 
+				-webkit-appearance: none 
+		.radio-control 
+			width: 100% 
+			display: block 
+			margin-bottom: 10px 
+		[type="radio"]:checked,
+				[type="radio"]:not(:checked) 
+			position: absolute 
+			left: -9999px 
+		[type="radio"]:checked + label,
+				[type="radio"]:not(:checked) + label 
+			position: relative 
+			padding-left: 28px 
+			cursor: pointer 
+			line-height: 20px 
+			display: inline-block 
+			color: #000 
+		[type="radio"]:checked + label:before,
+				[type="radio"]:not(:checked) + label:before 
+			content: '' 
+			position: absolute 
+			left: 0 
+			top: 0 
+			width: 18px 
+			height: 18px 
+			border: 1px solid #ddd 
+			border-radius: 100% 
+			background: #fff 
+		[type="radio"]:checked + label:after,
+				[type="radio"]:not(:checked) + label:after 
+			content: '' 
+			width: 18px 
+			height: 18px 
+			background: #FFF 
+			position: absolute 
+			top: 0 
+			left: 0 
+			border: #004990 6px solid 
+			border-radius: 100% 
+			-webkit-transition: all 0.2s ease 
+			transition: all 0.2s ease 
+		[type="radio"]:not(:checked) 
+			& + label 
+				&:after 
+					opacity: 0 
+					-webkit-transform: scale(0) 
+					transform: scale(0) 
+		[type="radio"]:checked 
+			& + label 
+				&:after 
+					opacity: 1 
+					-webkit-transform: scale(1) 
+					transform: scale(1) 
+		.info-icon 
+			width: 16px 
+			height: 16px 
+			border: #000 1px solid 
+			border-radius: 50% 
+			display: inline-block 
+			margin-left: 5px 
+			border-radius: 50% 
+			opacity: 0.4 
+			cursor: pointer 
+			text-align: center 
+			line-height: 15px 
+			font-size: 12px 
+		.primary 
+			cursor: pointer 
+			width: 100% 
+			display: block 
+			margin-top: 10px 
+			height: 50px 
+			line-height: 50px 
+			background-color: #004990 
+			border-radius: 5px 
+			color: #FFF 
+			
+			font-weight: 400 
+			font-size: 16px 
+			text-align: center 
+			border: none 
+		.orders 
+			max-width: 500px 
+		.accordion 
+			display: flex 
+			margin: 5px 0 
+			-webkit-box-align: center 
+			-ms-flex-align: center 
+			align-items: center 
+			-webkit-box-pack: justify 
+			-ms-flex-pack: justify 
+			justify-content: space-between 
+			label 
+				
+				font-weight: 600 
+				font-size: 16px 
+				color: #000 
+				img 
+					width: 12px 
+					margin-left: 5px 
+			& + .collapse 
+				background-color: #f8f9fb 
+				padding: 7px 
+				border-radius: 5px 
+				
+			.span 
+				
+				font-weight: bold 
+				font-size: 15px 
+				line-height: 15px 
+				color: #000 
+				text-align: right 
+				small 
+					display: block 
+					color: #3e3e3e 
+		.success 
+			color: #00955F !important 
+
+		
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+		<!--- Progress Bar ---->
+		<ul class="wizard">
+			<li class="step active">
+				<a href="#" class="current">Contact<br>Information</a>
+			</li>
+			<li class="step">
+				<a href="#">Payment<br>Information</a>
+			</li>
+			<li class="step">
+				<a href="#">Additional<br>Information</a>
+			</li>
+			<li class="step">
+				<a href="#">Complete<br>Checkout</a>
+			</li>
+		</ul>
+		
+		<div class="clearfix"></div>
+		
+		<!--- Contact Information Box --->
+		<div class="row">
+			<div class="">
+				<div class="contactbox">
+					<h2>Contact Information</h2>
+					<p>Let`s gather some contact information from you for each of the individuals associated with this policy.</p>
+					<form action="stap1-contactinfo-04.html">
+						<div class="card">
+							<div class="cardheader">
+								<h3>Insured Information</h3>
+							</div>
+							
+								<label class="label">Name:</label>
+								<span class="span">John A Deo</span>
+							
+							
+								<label class="label">Email:</label>
+								<span class="span">example@email.com</span>
+							
+							
+								<label class="label">Phone:</label>
+								<span class="span">555-555-5555</span>
+							
+							
+								<label class="label">Address:</label>
+								<span class="span">13302-Detroit Rd, Rocky River, OH, 50049</span>
+							
+							
+								<label class="label">Gender:</label>
+								<span class="span">Mail</span>
+							
+							
+								<label class="label">Date of Birth:</label>
+								<span class="span">02-15-2022</span>
+							
+						</div>
+						<div class="card">
+							<div class="cardheader">
+								<h3>Policy Owner Information</h3>
+							</div>
+							
+								<label class="label">I am Purchasing for:</label>
+								<span class="span">Planing for self</span>
+							
+							
+								<label class="label">Name:</label>
+								<span class="span">John A Deo</span>
+							
+							
+								<label class="label">Email:</label>
+								<span class="span">example@email.com</span>
+							
+							
+								<label class="label">Phone:</label>
+								<span class="span">555-555-5555</span>
+							
+							
+								<label class="label">Address:</label>
+								<span class="span">13302-Detroit Rd, Rocky River, OH, 50049</span>
+							
+							
+								<label class="label">Gender:</label>
+								<span class="span">Mail</span>
+							
+							
+								<label class="label">Date of Birth:</label>
+								<span class="span">02-15-2022</span>
+							
+						</div>
+						
+						<h2>Payment Information</h2>
+						<p>Please provide us with the information on the owner of these purchases. The wowner is the person who has the authority to make decisions after the purchase is complete.</p>
+						<div class="card">
+							<div class="cardheader">
+								<h3>Payment Options</h3>
+							</div>
+							<div  style="align-items: flex-start;">
+								<label class="label">Payment Options:</label>
+								<span class="span" style="display: inline;">
+									<div class="radio-control">
+										<input type="radio" id="full" name="radio-group">
+										<label for="full">Pay in full $5,400 <span class="info-icon">&#8505;</span></label>
+									</div>
+									<div class="radio-control">
+										<input type="radio" id="half" name="radio-group" checked>
+										<label for="half">Pay $210,92 for 36 months <span class="info-icon">&#8505;</span></label>
+									</div>
+								</span>
+							</div>
+							<button type="submit" class="primary" aria-label="save and continue">Save &amp; Continue</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			<!--- Order Summary ---->
+			
+			<div >
+				<div class="orders">
+					<div class="card">
+						<h3 class="title">Order Summary</h3>
+						<div class="accordion">
+							<a class="label" data-toggle="collapse" href="#collapseFuneral" role="button" aria-expanded="false" aria-controls="collapseFuneral">Funeral <img src="https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/arrow-down.png"></a>
+							<span class="span">$50/mo<small>for 60 mos.</small></span>
+						</div>
+						<div class="collapse" id="collapseFuneral">
+							Premum Burrial Package<br>Acme Casket - Gold<br>Catering
+						</div>
+						<div class="accordion">
+							<a class="label">Treval Protection <img src="https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/arrow-down.png"></a>
+							<span class="span">$300.00/mo<small>on time payment.</small></span>
+						</div>
+						<div class="accordion">
+							<a class="label">My Good Trust <img src="https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/arrow-down.png"></a>
+							<span class="span">$50/mo<small>for 60 mos.</small></span>
+						</div>	
+
+						<hr>
+
+						<div class="accordion">
+							<a class="label">Sale Tax</a>
+							<span class="span">$0.00</span>
+						</div>
+						<div class="accordion">
+							<a class="label">Subtotal</a>
+							<span class="span">$5,750.00</span>
+						</div>
+						<div class="accordion">
+							<a class="label">Price Adjustment</a>
+							<span class="span">N/A</span>
+						</div>
+						<div class="accordion">
+							<a class="label success">Amount Due Today</a>
+							<span class="span success">$5,750.00</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+</script>
+	
+</body>
+</html>

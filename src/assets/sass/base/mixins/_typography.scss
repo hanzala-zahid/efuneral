@@ -1,0 +1,79 @@
+// MIXIN TYPOGRAPHY DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+    // all variables/sass are written in all lowercase, no camelcase, no dashes
+    // standard body set to 16px and all other typography is based in relative sizes using REMS
+    // typography mixins are used in the base/typography page only -- this is where all typography is set for the project
+// SECTOINS: Headers, Paragraph, Label, Cards, xxl, xl, sm, xs, 
+
+
+// HEADERS ------------------------------------------------------------------------------
+// TODO add pixels for degrading
+@mixin h1 {
+    font-size: 1.25rem !important; // TODO REMOVE IMPORTANT LATER
+    font-weight: bold;  
+}  
+
+@mixin h2 {
+    font-size: 1.125rem !important; // TODO REMOVE IMPORTANT LATER
+    font-weight: 400 !important;  
+}
+
+@mixin h3 {
+    font-size: 1.1rem !important; // TODO REMOVE IMPORTANT LATER 
+    font-weight: bold;
+}
+
+@mixin h4 {
+    font-size: 1.0625rem !important; // TODO REMOVE IMPORTANT LATER
+    font-weight: bold;
+} 
+
+@mixin h5 {
+    font-size: 1rem !important; // TODO REMOVE IMPORTANT LATER
+    font-weight: bold !important; // TODO REMOVE IMPORTANT LATER
+}
+
+@mixin h6 {
+    font-size: 1.25rem !important; // TODO REMOVE IMPORTANT LATER
+}
+// END: HEADERS
+
+// PARAGRAPH --------------------------------------------------------------------------
+@mixin p {
+    font-size: 1rem !important; // TODO REMOVE IMPORTANT LATER
+} // END: p paragraph mixin
+
+// LABEL ------------------------------------------------------------------------------
+@mixin label {
+    font-size: 1rem !important; // TODO REMOVE IMPORTANT LATER
+    font-weight: bold;
+} // END: label mixin
+
+// CARDS ------------------------------------------------------------------------------
+@mixin cardheader {
+    @include h2;
+}  // END: cardheader mixin
+// END: CARDS
+
+// smaller or larger than standard font sizes
+// DO NOT USE THESE OFTEN
+// MUST BE LAST ------------------------------------------------------------------------
+@mixin fontxxl {
+    font-size: 4.8rem !important;
+}
+@mixin fontxl {
+    font-size: 3.5rem !important; // TODO SHOULD NOT BE A PIXEL CHANGE TO REM
+    font-weight: bolder;
+} // END: fontxl mixin
+
+@mixin fontlarge {
+    font-size: 1.8rem;
+}
+
+@mixin fontsm {
+    font-size: .8rem !important;
+} // END: fontsm mixin
+
+@mixin fontxsm {
+    font-size: .75rem !important;
+} // END: fontsm mixin

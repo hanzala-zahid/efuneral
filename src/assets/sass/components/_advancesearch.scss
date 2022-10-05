@@ -1,0 +1,143 @@
+// COMPONENTS DATE/TIME PICKERS DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: DATEPICKER
+
+// .advance-search
+
+.advance-search {
+	float: right;
+	display: flex;
+	max-width: 650px;
+	width: 100%;
+	-webkit-box-align: end !important;
+	-ms-flex-align: end !important;
+	align-items: flex-end !important;
+	.add {
+		width: 50px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.search-field {
+		max-width: 600px;
+		width: 100%;
+		label {
+			font-family: 'Helvetica Neue';
+			font-weight: 600;
+			display: block;
+			font-size: 16px;
+			margin-bottom: 2px;
+		}
+		.search-wrap {
+			height: 45px;
+			border-radius: 5px;
+			border: 1px solid #CCCCCC;
+			display: flex;
+			flex-wrap: wrap;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			.search {
+				border: none;
+				font-size: 13px;
+				max-width: 535px;
+				font-family: 'Helvetica Neue';
+				width: 100%;
+				font-weight: 400;
+				padding: 0 10px;
+				background: url("search.svg") right no-repeat;
+			}
+			a {
+				border-left: 1px solid #CCCCCC;
+				text-align: center;
+				width: 50px;
+				padding-top: 10px;
+			}
+		}
+	}
+}
+
+.select-field {
+	align-items: center;
+	width: 100%;
+	max-width: 525px;
+	position: relative;
+	-webkit-appearance: none;
+	&:after {
+		position: absolute;
+		content: '';
+		background: url("https://www.theflowershop.ae/marketing-campaigns/email-images/20220615/select.png") right no-repeat;
+		width: 30px;
+		height: 40px;
+		top: 2px;
+		right: 1px;
+		-webkit-appearance: none;
+	}
+	>.select {
+		font-family: 'Helvetica Neue';
+		-webkit-appearance: none;
+		font-weight: 400;
+		font-size: 16px;
+		padding: 10px;
+		color: #838383;
+		width: 100%;
+		max-width: 525px;
+		height: 45px;
+		background: #FFFFFF;
+		border: 1px solid #CCCCCC;
+		border-radius: 5px;
+		position: relative;
+		&:focus {
+			background-color: #fff;
+			border-color: #80bdff;
+			outline: 0;
+			box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+		}
+	}
+}
+
+.advance-search {
+	float: right;
+	display: flex;
+	max-width:650px;
+	width:100%;
+	-webkit-box-align: end !important;
+	-ms-flex-align: end !important;
+	align-items: flex-end !important;
+}
+.advance-search .add {
+	width:50px; margin-bottom:10px;
+	text-align: center;
+}
+.advance-search .search-field {
+	max-width:600px;
+	width:100%;
+}
+.advance-search .search-field label {
+	font-family:'Helvetica Neue';
+	font-weight:600;
+	display: block;
+	font-size:16px;
+	margin-bottom:2px; 
+}
+.advance-search .search-field .search-wrap {
+	height: 45px; border-radius:5px;
+	border: 1px solid #CCCCCC;
+	display:flex; flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+.advance-search .search-field .search-wrap .search {
+	border: none; font-size:13px; max-width:535px;
+	font-family:'Helvetica Neue'; width:100%;
+	font-weight:400; padding:0 10px;
+	background:url("search.svg") right no-repeat;
+}
+.advance-search .search-field .search-wrap a {
+	border-left:1px solid #CCCCCC;
+	text-align: center;
+	width:50px; padding-top:10px;
+} // END: .advance-search

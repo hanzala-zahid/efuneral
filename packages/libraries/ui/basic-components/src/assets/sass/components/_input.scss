@@ -1,0 +1,34 @@
+// COMPONENTS FORM INPUT DV LAST EDITED 2022 MAY ******************************************************************
+// FILE NOTES: 
+        // CODE STYLE - notice all variables are lowercase, no camelcase
+        // END is for easy searches
+        // USE is to better understand what the code is for
+// SECTIONS: inputs
+
+// Inputs
+form {
+  input,
+  input input { 
+    width: 100%;
+    max-width: 650px;
+    clear:both;
+    display: block;
+    padding: 10px;
+
+    &:focus {
+      background: $formfocusbg !important; 
+    } // END: form :focus
+  } // END: form 
+  input[type='text'], 
+  input[type='tel'], 
+  input[type='password'],
+  input[type='tel'], 
+  input[type='email'], 
+  input[type='password'] {
+
+    &:focus, &:active {
+      outline: none;
+      border: none;
+    } // END: form inputs focus and active
+  } // END: form inputs
+} // END: form
